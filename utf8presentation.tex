@@ -1,7 +1,10 @@
 \documentclass{beamer}
 
-\usepackage[english, greek]{babel}
-\usepackage[iso-8859-7]{inputenc}
+\usepackage[cm-default]{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\setmainfont[Mapping=tex-text]{DejaVu Sans}
+
 \usepackage{graphicx}
 \usepackage{amssymb}
 
@@ -182,13 +185,13 @@
                 \item Οι πρωταρχικά αναδρομικές συναρτήσεις είναι αριθμήσιμο σύνολο.
                 \pause
                 \item Για την απαρίθμηση μπορούμε να χρησιμοποιήσουμε π.χ. το 
-                ακόλουθο σχήμα βασισμένο στα αριθμητικά του \latintext G\"odel
+                ακόλουθο σχήμα βασισμένο στα αριθμητικά του G\"odel
                 \footnote{
                 \htmladdnormallink{\tiny
                 http://en.wikipedia.org/wiki/G\"odel\_number}
                 {http://en.wikipedia.org/wiki/G\%C3\%B6del_number}}:
                 \begin{itemize}
-                        \item \greektext Οι θεμελιώδεις συναρτήσεις:
+                        \item Οι θεμελιώδεις συναρτήσεις:
                         \[
                                 \begin{array}{l}
                                         Z_0 \rightarrow 1 \\
@@ -309,7 +312,7 @@
 \begin{frame}
         \frametitle{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
         \begin{itemize}
-                \item Η συνάρτηση \latintext Ackermann:
+                \item Η συνάρτηση Ackermann:
                 \[\left\{
                         \begin{array}{ll}
                                 A(0,n) &= n+1\\
@@ -318,10 +321,10 @@
                         \end{array}
                 \right.\]
                 \pause
-                \item \greektext Υπολογίσιμη.
+                \item Υπολογίσιμη.
                 \pause
                 \item Δεν μπορεί να γραφεί με πρωταρχική αναδρομή 
-                \footnote{\latintext
+                \footnote{
                 \htmladdnormallink{\tiny
                 http://home.manhattan.edu/~gregory.taylor/thcomp/pdf-files/ackerman.pdf}
                 {http://home.manhattan.edu/~gregory.taylor/thcomp/pdf-files/ackerman.pdf}}.
@@ -397,7 +400,7 @@
 \begin{frame}
         \frametitle{Παραδείγματα αναδρομικών συναρτήσεων}
         \begin{itemize}
-                \item Αναπαράσταση της συνάρτησης \latintext Ackermann \greektext με αναδρομή
+                \item Αναπαράσταση της συνάρτησης Ackermann με αναδρομή
         \end{itemize}
 \end{frame}
 
@@ -443,10 +446,10 @@
 
 \section{Αναπαράσταση αναδρομικών συναρτήσεων}
 
-\subsection{\latintext Church Numerals}
+\subsection{Church Numerals}
 
 \begin{frame}
-        \frametitle{\latintext Church Numerals}
+        \frametitle{Church Numerals}
         \begin{itemize}
                 \item Αναπαράσταση του \( \mathbb{N} \) στο λ-λογισμό:
                 \pause
@@ -459,7 +462,7 @@
 	        		\ldots
 	        	\end{array} \]
 	        	\pause
-                \item Αν \(n \) είναι \latintext Church Numeral \greektext και \(t, u\) είναι λ-όροι, τότε
+                \item Αν \(n \) είναι Church Numeral και \(t, u\) είναι λ-όροι, τότε
                 \[ n\:t\:u =_\beta (t)^n u \]
         \end{itemize}
 \end{frame}
