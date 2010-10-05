@@ -426,22 +426,102 @@
 \begin{frame}
         \frametitle{Αντικατάσταση}
         \begin{itemize}
-        	\item 
-        	\item Αν \(t\) είναι λ-όρος και \(x\) είναι μεταβλητή, τότε η αντικατάσταση της \(x\)
-            από τον \(t\)
+        	\item Αν \(t\), \(M\) είναι λ-όροι και \(x\) είναι μεταβλητή, τότε η αντικατάσταση της \(x\)
+            από τον \(t\) στον όρο \(M\), συμβολίζεται με \(M[x:=t]\) \\
+            \pause
+            \item \[x[x:=t] \equiv t\]
+            \pause
+            \item \[y[x:=t] \equiv y\]
+                                    
         \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{}
+        \frametitle{Αντικατάσταση}
         \begin{itemize}
-                \item
+        	
+            \item \[(PQ)[x:=t] \equiv (P[x:=t])(Q[x:=t])\]
+            \pause
+            \item \[(\lambda y . P)[x:=t] \equiv \lambda y . (P[x:=t])\]
+            \pause
+            \item \[(\lambda x . P)[x:=t] \equiv \lambda x . P\]
+            
         \end{itemize}
 \end{frame}
 
 \subsection{β-συστολή}
+
+\begin{frame}
+        \frametitle{β-συστολή}
+        \begin{itemize}
+        	
+            \item $\rightarrow _\beta$ είναι η μικρότερη διμελής σχέση στο $\Lambda$ ώστε να ισχύει ότι 
+                  \[(\lambda x . P)Q \rightarrow _\beta P[x:=Q]\]
+            \pause
+                  και η οποία είναι κλειστή για τους ακόλουθους κανόνες:
+            \pause
+            \item \[P \rightarrow _\beta P^{\prime}  \Rightarrow \forall x \in V : \lambda x . P \rightarrow _\beta \lambda x .    P^{\prime}\]
+            \pause
+            \item \[P \rightarrow _\beta P^{\prime}  \Rightarrow \forall Z \in \Lambda : P Z \rightarrow _\beta P^{\prime} Z\]
+			\pause
+            \item \[P \rightarrow _\beta P^{\prime}  \Rightarrow \forall Z \in \Lambda : Z P \rightarrow _\beta Z P^{\prime}\]
+            
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{β-συστολή}
+        \begin{itemize}
+        	
+            \item $(\lambda x . P)Q$: $\beta$ - \textit{redex}
+            \pause
+			\item $P[x:=Q]$: $\beta$ - \textit{contractum}
+            \pause
+            \item ´Ενας όρος \(M\) είναι μία \textit{$\beta$ - κανονική μορφή} εάν δεν υπάρχει όρος \(N\) ώστε $M \rightarrow      _\beta N$.
+            
+        \end{itemize}
+\end{frame}
+
 \subsection{β-αναγωγή}
+
+\begin{frame}
+        \frametitle{β-αναγωγή}
+        \begin{itemize}
+        	
+            \item Η σχέση $\rightarrow ^{\star} _{\beta}$ είναι η μεταβατική και αυτοπαθής κλειστότητα της σχέσης
+                  $\rightarrow _\beta$ \\ Συνεπώς είναι κλειστή για τους κανόνες: 
+            \pause
+            \item \[P \rightarrow  _{\beta} P ^{\prime} \Rightarrow P \rightarrow ^{\star}  _{\beta} P ^{\prime}\]
+            \pause
+            \item \[P \rightarrow ^{\star} _{\beta} P ^{\prime} \cap P ^{\prime} \rightarrow ^{\star} _{\beta} P ^{\prime \prime}
+                  \Rightarrow P \rightarrow ^{\star} _{\beta} P ^{\prime \prime}\]
+			\pause
+            \item \[P \rightarrow ^{\star} _{\beta} P\]
+            
+        \end{itemize}
+\end{frame}
+
 \subsection{β-ισοδυναμία}
+
+\begin{frame}
+        \frametitle{β-ισοδυναμία}
+        \begin{itemize}
+        	
+            \item Η σχέση $ =_\beta$ είναι η μεταβατική, αυτοπαθής και συμμετρική κλειστότητα της σχέσης
+                  $\rightarrow _\beta$ \\ Συνεπώς είναι κλειστή για τους κανόνες: 
+            \pause
+            \item \[P \rightarrow  _\beta P^\prime \Rightarrow P  =_\beta P^\prime \]
+            \pause
+            \item \[P  =_\beta P^\prime \cap P^\prime =_\beta P ^{\prime \prime}
+                  \Rightarrow P =_\beta P ^{\prime \prime}\]
+			\pause
+            \item \[P =_\beta P\]
+            \pause
+            \item \[P  =_\beta P^\prime \Rightarrow P^\prime =_\beta P\]
+            
+        \end{itemize}
+\end{frame}
+
 \subsection{Κανονικοποίηση}
 
 \section{Αναπαράσταση αναδρομικών συναρτήσεων}
