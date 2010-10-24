@@ -488,17 +488,33 @@
         \frametitle{β-αναγωγή}
         \begin{itemize}
         	
-            \item Η σχέση $\rightarrow ^{\star} _{\beta}$ είναι η μεταβατική και αυτοπαθής κλειστότητα της σχέσης
+            \item Η σχέση $\twoheadrightarrow _\beta$ είναι η μεταβατική και αυτοπαθής κλειστότητα της σχέσης
                   $\rightarrow _\beta$ \\ Συνεπώς είναι κλειστή για τους κανόνες: 
             \pause
-            \item \[P \rightarrow  _{\beta} P ^{\prime} \Rightarrow P \rightarrow ^{\star}  _{\beta} P ^{\prime}\]
+            \item \[P \rightarrow  _{\beta} P ^{\prime} \Rightarrow P \twoheadrightarrow _{\beta} P ^{\prime}\]
             \pause
-            \item \[P \rightarrow ^{\star} _{\beta} P ^{\prime} \cap P ^{\prime} \rightarrow ^{\star} _{\beta} P ^{\prime \prime}
+            \item \[P \twoheadrightarrow _{\beta} P ^{\prime} \cap P ^{\prime} \twoheadrightarrow _{\beta} P ^{\prime \prime}
                   \Rightarrow P \rightarrow ^{\star} _{\beta} P ^{\prime \prime}\]
 			\pause
-            \item \[P \rightarrow ^{\star} _{\beta} P\]
+            \item \[P \twoheadrightarrow _{\beta} P\]
             
         \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{β-συστολή}
+        \begin{itemize}
+        \item Ισχύει η ακόλουθη πρόταση:\\
+        		\[
+                \small
+                \begin{array}{ll}
+                M \twoheadrightarrow _\beta N \Leftrightarrow 
+                & $Είτε $ M \equiv N $ είτε υπάρχουν $ M_1, M_2,\ldots M_n $ ώστε $ \\
+                & M \equiv M_1 $ και N $ \equiv M_n $ και για κάθε $ i (1 \leq i \leq n-1),\\
+                & M_i \twoheadrightarrow _\beta M_{i+1}
+                \end{array}
+                \]
+		\end{itemize}
 \end{frame}
 
 \subsection{β-ισοδυναμία}
@@ -522,7 +538,58 @@
         \end{itemize}
 \end{frame}
 
+\begin{frame}
+        \frametitle{β-ισοδυναμία}
+        \begin{itemize}
+        		\item Ισχύει η ακόλουθη πρόταση:\\
+        		\[
+                \small
+                \begin{array}{ll}
+                M =_\beta N \Leftrightarrow 
+                & $ Υπάρχουν $ M_1, M_2,\ldots M_n $ με $ M \equiv M_1 $ και $ N \equiv M_n \\
+                & $ και για κάθε i $ (1 \leq i \leq n-1) $ έχουν $ M_i \twoheadrightarrow _\beta M_{i+1}\\
+                & $ ή $ M_{i+1} \twoheadrightarrow _\beta M_i
+                \end{array}
+                \]
+		\end{itemize}
+\end{frame}
+
 \subsection{Κανονικοποίηση}
+
+\begin{frame}
+\frametitle{Κανονικοποίηση}
+\begin{itemize}
+\item \textbf{Θεώρημα Church-Rosser:} Αν  $t \twoheadrightarrow _\beta u, v$  τότε μπορεί να βρεθεί $w$ τέτοιο ώστε $ u, v \twoheadrightarrow _\beta w$.\pause
+
+\begin{figure}
+\includegraphics[scale=0.3]{CR.jpg} 
+\end{figure}\pause
+\item \textbf{Ορισμός}: Έστω $t \twoheadrightarrow _\beta u$ και $u$ είναι $\beta$-κανονική μορφή. Τότε ο όρος $u$ λέγεται $\beta$-κανονική μορφή του $t$.\pause
+\item \textbf{Πόρισμα}: Ένας όρος $t$ έχει το πολύ μια κανονική μορφή. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Κανονικοποίηση}
+\begin{itemize}
+\item \textbf{Πόρισμα}:  $u =_\beta v \Leftrightarrow$ Υπάρχει όρος $t$ ώστε $u, v \twoheadrightarrow _\beta t$.\pause
+\item $(\Leftarrow)$ Προφανές από τον ορισμό της $\beta$-ισοδυναμίας.\pause
+\item $(\Rightarrow)$ Aν  κάποιος μπορεί να συμπεράνει ότι $u = v$, τότε είναι εύκολο να παρατηρήσει ότι υπάρχουν όροι $u = t_0, t_1,\ldots, t_{2n-1}, t_{2n} = v$. Εφαρμόζοντας επανειλημμένα το θεώρημα Church-Rosser, καταλήγουμε σε έναν όρο	$w$ τέτοιον ώστε $u, v \leadsto w$.\pause
+\begin{figure} [!ht]
+\centering
+\includegraphics[scale=0.3] {CR1.jpg}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Κανονικοποίηση}
+\begin{itemize}
+\item \textbf{Παρατήρηση}: Δεν έχουν όλοι οι όροι κανονικές μορφές, π.χ. ο όρος $\omega \equiv  \lambda x . xx$. Αν όμως υπάρχει, τότε είναι μοναδική.\pause
+\item \textbf{Πόρισμα}: Ο $\lambda$-λογισμός ως θεωρία της $\beta$-ισότητας είναι συνεπής θεωρία.\pause
+\item \textbf{Απόδειξη}: $\lambda x . x \neq _\beta \lambda x . \lambda y . x$ 
+\end{itemize}
+\end{frame}
 
 \section{Αναπαράσταση αναδρομικών συναρτήσεων}
 
