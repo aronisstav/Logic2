@@ -550,7 +550,9 @@
                 & $ και για κάθε i $ (1 \leq i \leq n-1) $ έχουν $ M_i \twoheadrightarrow _\beta M_{i+1}\\
                 & $ ή $ M_{i+1} \twoheadrightarrow _\beta M_i
                 \end{array}
-                \]
+                \] \pause
+                \item \textbf{Πόρισμα}: Ο $\lambda$-λογισμός ως θεωρία της $\beta$-ισότητας είναι συνεπής θεωρία.					\pause
+				\item \textbf{Απόδειξη}: $\lambda x . x \neq _\beta \lambda x . \lambda y . x$
 		\end{itemize}
 \end{frame}
 
@@ -585,11 +587,50 @@
 \begin{frame}
 \frametitle{Κανονικοποίηση}
 \begin{itemize}
-\item \textbf{Παρατήρηση}: Δεν έχουν όλοι οι όροι κανονικές μορφές, π.χ. ο όρος $\omega \equiv  \lambda x . xx$. Αν όμως υπάρχει, τότε είναι μοναδική.\pause
-\item \textbf{Πόρισμα}: Ο $\lambda$-λογισμός ως θεωρία της $\beta$-ισότητας είναι συνεπής θεωρία.\pause
-\item \textbf{Απόδειξη}: $\lambda x . x \neq _\beta \lambda x . \lambda y . x$ 
+\item Δεν έχουν όλοι οι όροι κανονικές μορφές, π.χ. ο όρος $\omega \equiv  (\lambda x . xx) \lambda x . xx$. Αν όμως υπάρχει, τότε είναι μοναδική. \pause
+\item Ένας όρος ο οποίος έχει κανονική μορφή ονομάζεται κανονικοποιήσιμος. Αυτό δε συνεπάγεται ότι οποιαδήποτε αναγωγή οδηγεί στην κανονική μορφή του. \pause
+\item Κάθε όρος που έχει άπειρη αναγωγή περιέχει τον όρο $\omega$. Ωστόσο, το αντίστροφο δεν ισχύει.\pause
+\item Ένας όρος που δεν έχει καμία άπειρη αναγωγή ονομάζεται ισχυρά κανονικοποιήσιμος. 
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Αριστερότερη Αναγωγή}
+\begin{itemize}
+\item \textbf{Αριστερότερο redex} ενός μη κανονικού όρου $t$ είναι το redex στο οποίο το "$(\lambda$" βρίσκεται αριστερότερα από κάθε άλλο "$(\lambda$" του $t$. \pause
+\item \textbf{Αριστερότερη αναγωγή} καλείται μία ακολουθία $t_0, t_1, \ldots, t_n, \ldots$ τέτοια ώστε $\forall n: t_n \rightarrow _\beta t_{n+1}$ με συστολή του αριστερότερου redex στον $t_n$. \pause
+\item \textbf{Συμβολισμός:} $t \rightarrow _l t^\prime$ , $t \twoheadrightarrow _l t^\prime$ \pause
+\item Για δεδομένα $t$, $n$ η αριστερότερη αναγωγή είναι μοναδική. Αν $t$ κανονικοποιήσιμος τότε η αριστερότερη αναγωγή καταλήγει στην κανονική μορφή του $t$. \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Αναγωγή κεφαλής}
+\begin{itemize}
+\item \textbf{Πρόταση:} Κάθε $\lambda$-όρος $t$ γράφεται μοναδικά με μία από τις ακόλουθες μορφές: \pause
+ \[(1): \lambda x_1 \ldots \lambda x_n . (x) t_1 \ldots t_m\] 
+ \[(2): \lambda x_1 \ldots \lambda x_n . ((\lambda x . u) v) t_1 \ldots t_m\] \pause
+\item \textbf{Απόδειξη:} Με επαγωγή στον όρο $t$. \pause
+\item $t$ μεταβλητή: (1) όπου $n=m=0$ \pause
+\item $t = \lambda x . t^\prime$: Από Ε.Υ. $t^\prime$ γράφεται κατάλληλα, συνεπώς το ίδιο και ο $t$ \pause
+\item $t = (t^\prime) t^{\prime \prime}$:
+	\begin{itemize}
+	\item $t^\prime$ $\lambda$-αφαίρεση: (2) όπου $n=m=0$ \pause
+	\item αν $t^\prime$ δεν είναι $\lambda$-αφαίρεση, τότε $t^\prime = (w) w_1 \ldots w_k$, όπου $w$ μεταβλητή ή redex, άρα  $t = ((w) w_1 \ldots w_k) t^{\prime \prime}$, δηλαδή (1) ή (2) όπου $n=0$
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Αναγωγή κεφαλής}
+\begin{itemize}
+\item Κάθε όρος $t = \lambda x_1 \ldots \lambda x_n . (x) t_1 \ldots t_m$ ονομάζεται κανονική μορφή κεφαλής.\pause
+\item Επιπλέον, αν $t = \lambda x_1 \ldots \lambda x_n . ((\lambda x . u) v) t_1 \ldots t_m$, τότε $(\lambda x . u) v$ ονομάζεται redex κεφαλής.\pause
+\item Το redex κεφαλής (αν υπάρχει) είναι το αριστερότερο redex, ενώ το αντίστροφο δεν ισχύει.\pause
+\item Για δεδομένο όρο $t$ η αναγωγή κεφαλής είναι μοναδική.
+\end{itemize}
+\end{frame}
+
 
 \section{Αναπαράσταση αναδρομικών συναρτήσεων}
 
