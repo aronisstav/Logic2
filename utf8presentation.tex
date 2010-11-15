@@ -587,9 +587,9 @@
 \begin{frame}
 \frametitle{Κανονικοποίηση}
 \begin{itemize}
-\item Δεν έχουν όλοι οι όροι κανονικές μορφές, π.χ. ο όρος $\omega \equiv  (\lambda x . xx) \lambda x . xx$. Αν όμως υπάρχει, τότε είναι μοναδική. \pause
+\item Δεν έχουν όλοι οι όροι κανονικές μορφές, π.χ. ο όρος $\Omega \equiv  (\lambda x . xx) \lambda x . xx$. Αν όμως υπάρχει, τότε είναι μοναδική. \pause
 \item Ένας όρος ο οποίος έχει κανονική μορφή ονομάζεται κανονικοποιήσιμος. Αυτό δε συνεπάγεται ότι οποιαδήποτε αναγωγή οδηγεί στην κανονική μορφή του. \pause
-\item Κάθε όρος που έχει άπειρη αναγωγή περιέχει τον όρο $\omega$. Ωστόσο, το αντίστροφο δεν ισχύει.\pause
+\item Κάθε όρος που έχει άπειρη αναγωγή περιέχει τον όρο $\Omega$. Ωστόσο, το αντίστροφο δεν ισχύει.\pause
 \item Ένας όρος που δεν έχει καμία άπειρη αναγωγή ονομάζεται ισχυρά κανονικοποιήσιμος. 
 \end{itemize}
 \end{frame}
@@ -632,6 +632,21 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Επιλυσιμότητα}
+\begin{itemize}
+\item Ο κλειστός όρος $t$ είναι επιλύσιμος αν υπάρχουν $v_1, \ldots, v_n, (n \geqslant 0)$ ώστε
+ $ (t) v_1 \ldots v_n =_\beta \mathbb{I} $ \pause
+ \item Τυχών όρος $t$ είναι επιλύσιμος αν η κλειστότητα $\lambda \overrightarrow{x} . t$ είναι επιλύσιμος. \pause
+ \item \textbf{Πρόταση:} $(t) v$ επιλύσιμος $ \Rightarrow t$ επιλύσιμος. \pause
+ \item Επιπλέον, για κάθε λ-όρο $t$ τα ακόλουθα είναι ισοδύναμα:
+ 	\begin{enumerate}
+ 	\item $t$ επιλύσιμος
+ 	\item $t =_\beta$ κανονική μορφή κεφαλής
+ 	\item η αναγωγή κεφαλής του $t$ τερματίζει 	
+ 	\end{enumerate}
+\end{itemize}
+\end{frame}
 
 \section{Αναπαράσταση αναδρομικών συναρτήσεων}
 
@@ -658,6 +673,18 @@
 
 \subsection{Θεμελιώδεις συναρτήσεις}
 \begin{frame}
+        \frametitle{Αναπαράσταση μερικών συναρτήσεων}
+        \begin{itemize}
+                \item Έστω $\phi : \mathbb{N}^n \rightarrow \mathbb{N}$ μερική συνάρτηση και $\Phi \belongs $
+                \pause
+               
+        \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
         \frametitle{Θεμελιώδεις συναρτήσεις}
         \begin{itemize}
                 \item Η σταθερή συνάρτηση με τιμή 0: \[Z_0=\lambda f . \lambda x . x\]
@@ -674,7 +701,55 @@
         \begin{itemize}
                 \item Απλή ιδέα: \[o = \lambda f. \lambda g. \lambda x . (f) (g) x\]
                 \pause
-                \item Τότε αν 
+                \item Τότε αν $n \geqslant 1$ είναι Church Numeral και $S, h$ κλειστοί $\lambda$-όροι, τότε
+                \[ ((n) \lambda g . g o S) h \twoheadrightarrow _h (\lambda g . g o S)^n h
+                   \twoheadrightarrow _h \lambda x . (h) (S)^n x \] \pause
+                 \item Απόδειξη: Επαγωγή στο $n$.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Σύνθεση}
+        \begin{itemize}
+                \item Έστω $\Phi, w$ δύο $\lambda$-όροι, $m$ Church Numeral. Όρίζουμε $<\Phi, w> = ((w) \lambda g . g o S_1) \Phi \Omega$. Τότε:
+                \pause
+                \item αν $w$ μη επιλύσιμος, τότε $<\Phi, w>$ μη επιλύσιμος. \pause
+                \item αν $w =_\beta m$ τότε $<\Phi, w> =_\beta \Phi m$ \pause
+                \item Απόδειξη: 
+                \[
+                \small
+                \begin{array}{ll}
+                w =_\beta m \Rightarrow <\Phi, w>
+                & =_\beta ((m) \lambda g . g o S_1) \Phi \Omega \\
+                & =_\beta (\lambda g . g o S_1)^m \Phi \Omega \\
+                & =_\beta (\lambda x . (\Phi) (S_1)^m x) \Omega \\
+                & =_\beta (\Phi) (S_1)^m \Omega \\
+                & =_\beta \Phi m
+                \end{array}
+                \]           	
+           
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Σύνθεση}
+        \begin{itemize}
+                \item ´Εστω $<\Phi, w_1,\ldots, w_k> := <<\Phi, w_1,\ldots, w_{k-1}>, w_k>$. \\
+                  Αν $\Phi, w_1,\ldots, w_k$ είναι λ-όροι τ.ω. κάθε $w_i$ είναι β-ισοδύναμο με φυσικό του Church ή μη επιλύσιμο, τότε: \pause
+                 \item αν ένα από τα $w_i$ είναι μη επιλύσιμο, τότε και $<\Phi, w_1,\ldots, w_k>$ μη επιλύσιμος. \pause
+                 \item αν $\forall i: w_i =_\beta n_i$, τότε $<\Phi, w_1,\ldots, w_k> =_\beta \Phi n_1 \ldots n_k$   
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Σύνθεση}
+        \begin{itemize}
+                \item \textbf{Πρόταση:} Αν $f_1,\ldots,f_k : \mathbb{N}^n \rightarrow \mathbb{N}, g : \mathbb{N}^k \rightarrow \mathbb{N}$ είναι ισχυρά αναπαραστάσιμες στο λ-λογισμό, τότε και η σύνθεση 
+                 $g(f_1,\ldots,f_k)$ είναι ισχυρά αναπαραστάσιμη. \pause
+                 \item \textbf{Απόδειξη:} Αν $\Phi_1, \ldots, \Phi_k, \Psi$ αναπαριστούν ισχυρά τις
+                  $f_1,\ldots, f_k, g$, τότε
+                  \[X = \lambda x_1 \ldots \lambda x_n . <\Psi, \Phi_1 x_1 \ldots x_n, \ldots, \Phi_k x_1 \ldots x_n> \]
+                  αναπαριστά ισχυρά τη σύνθεση $g(f_1,\ldots,f_k)$. 
         \end{itemize}
 \end{frame}
 
