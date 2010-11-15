@@ -576,7 +576,7 @@
 \begin{itemize}
 \item \textbf{Πόρισμα}:  $u =_\beta v \Leftrightarrow$ Υπάρχει όρος $t$ ώστε $u, v \twoheadrightarrow _\beta t$.\pause
 \item $(\Leftarrow)$ Προφανές από τον ορισμό της $\beta$-ισοδυναμίας.\pause
-\item $(\Rightarrow)$ Aν  κάποιος μπορεί να συμπεράνει ότι $u = v$, τότε είναι εύκολο να παρατηρήσει ότι υπάρχουν όροι $u = t_0, t_1,\ldots, t_{2n-1}, t_{2n} = v$. Εφαρμόζοντας επανειλημμένα το θεώρημα Church-Rosser, καταλήγουμε σε έναν όρο	$w$ τέτοιον ώστε $u, v \leadsto w$.\pause
+\item $(\Rightarrow)$ Aν  κάποιος μπορεί να συμπεράνει ότι $u = v$, τότε είναι εύκολο να παρατηρήσει ότι υπάρχουν όροι $u = t_0, t_1,\ldots, t_{2n-1}, t_{2n} = v$. Εφαρμόζοντας επανειλημμένα το θεώρημα Church-Rosser, καταλήγουμε σε έναν όρο	$w$ τέτοιον ώστε $u, v \twoheadrightarrow _\beta w$.\pause
 \begin{figure} [!ht]
 \centering
 \includegraphics[scale=0.3] {CR1.jpg}
@@ -675,8 +675,11 @@
 \begin{frame}
         \frametitle{Αναπαράσταση μερικών συναρτήσεων}
         \begin{itemize}
-                \item Έστω $\phi : \mathbb{N}^n \rightarrow \mathbb{N}$ μερική συνάρτηση και $\Phi \belongs $
+                \item Έστω $\phi : \mathbb{N}^n \rightarrow \mathbb{N}$ μερική συνάρτηση και $\Phi \in \Lambda $. O όρος $\Phi$ αναπαριστά (αντίστοιχα αναπαριστά ισχυρά) τη $\phi$ αν για κάθε $k_1,\ldots, k_n \in \mathbb{N}$ και $ \underline{k_1}, \ldots, \underline{k_n}$ τα αντίστοιχα Church numerals: \pause
+                \item  αν $\phi(k_1,\ldots,k_n)$ δεν ορίζεται τότε $(\Phi) \underline{k_1} \ldots \underline{k_n}$ δεν είναι κανονικοποιήσιμος (αντίστοιχα επιλύσιμος) \pause
+                \item  αν $\phi(k_1,\ldots,k_n) = k$ τότε $(\Phi) \underline{k_1} \ldots \underline{k_n} =_\beta \underline{k}$ 
                 \pause
+                \item Οι μη επιλύσιμοι όροι αναπαριστούν την αοριστία.
                
         \end{itemize}
 \end{frame}
