@@ -634,11 +634,11 @@
                 \item Αναπαράσταση του $ \mathbb{N} $ στο λ-λογισμό:
                 \pause
 	        	$$ \begin{array}{l}
-	        		0 \rightarrow \lambda f . \lambda x . x \\
-	        		1 \rightarrow \lambda f . \lambda x . (f) x \\
-	        		2 \rightarrow \lambda f . \lambda x . (f) (f) x \\
+	        		0 \rightarrow \bar{0} = \lambda f . \lambda x . x \\
+	        		1 \rightarrow \bar{1} = \lambda f . \lambda x . (f) x \\
+	        		2 \rightarrow \bar{2} = \lambda f . \lambda x . (f) (f) x \\
 	        		\ldots \\
-	        		n \rightarrow \lambda f . \lambda x . \underbrace{(f) \ldots (f)}_n x \\
+	        		n \rightarrow \bar{n} = \lambda f . \lambda x . \underbrace{(f) \ldots (f)}_n x \\
 	        		\ldots
 	        	\end{array} $$
 	        	\pause
@@ -667,7 +667,7 @@
         \frametitle{Θεμελιώδεις συναρτήσεις}
         \begin{itemize}
                 \item Η σταθερή συνάρτηση με τιμή 0:
-                	$$Z_0=\lambda f . \lambda x . x$$
+                	$$Z_0=\bar{0}$$
                 \pause
                 \item Η συνάρτηση που παίρνει έναν αριθμό και επιστρέφει τον επόμενο:
                 	$$S_1(n)=\lambda n . \lambda f . \lambda x . (f) (n) f x$$
@@ -683,7 +683,7 @@
                 \item Απλή ιδέα: $$o = \lambda f. \lambda g. \lambda n . (f) (g) n$$
                 \pause
                 \item Έστω η συνάρτηση $z_1$ που έχει παντού τιμή 0...:
-                    $$Z_1 = \lambda n. \lambda f. \lambda x . x $$
+                    $$Z_1 = \lambda n. \bar{0}$$
                 \pause
                 \item ... και μια αόριστη συνάρτηση $\omega_1$:
                 	$$\Omega_1 = \lambda n. \Omega$$
@@ -766,5 +766,89 @@
 \end{frame}
 
 \subsubsection{Πρωταρχική Αναδρομή}
+
+\begin{frame}
+        \frametitle{Πρωταρχική Αναδρομή}
+        \begin{itemize}
+                \item Έστω ότι έχουμε τους εξής δύο όρους:
+                $$ TRUE = \lambda x. \lambda y. x $$
+                $$ FALSE = \lambda x. \lambda y. y $$
+                \pause
+                \item Τότε αν $X$ είναι $TRUE$ ή $FALSE$ και $Y,Z$ όροι, ένα $if\ldots then \ldots else \ldots$ γράφεται:
+                $$ (X)YZ $$
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Πρωταρχική Αναδρομή}
+        \begin{itemize}
+                \item Επίσης για τον όρο $Zero? = \lambda n. (n) (\lambda x . FALSE) TRUE$ ισχύει
+                \pause
+                $$\begin{array}{ll}
+                (Zero?) \bar{0} & =_\beta (\lambda n. (n) (\lambda x . FALSE) TRUE) \lambda f. \lambda x. x \\
+                				& =_\beta (\lambda f. \lambda x. x) (\lambda x . FALSE) TRUE \\
+                				& =_\beta TRUE \\
+                \end{array}$$                
+                \pause
+                $$\begin{array}{ll}
+                (Zero?) \bar{n} & =_\beta (\lambda n. (n) (\lambda x . FALSE) TRUE) \lambda f . \lambda x . \underbrace{(f) \ldots (f)}_n x \\
+                				& =_\beta (\lambda f . \lambda x . \underbrace{(f) \ldots (f)}_n x) (\lambda x . FALSE) TRUE \\
+                				& =_\beta FALSE \\
+                \end{array}$$                
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Πρωταρχική Αναδρομή}
+        \begin{itemize}
+        	\item Τέλος η συνάρτηση ``προηγούμενος'' γράφεται:
+        	$$ P_1 = \lambda n. \lambda f. \lambda x. n (\lambda g. \lambda h. h (g f)) (\lambda u.x) (\lambda u. u) $$
+        \end{itemize}
+\end{frame}
+\begin{frame}
+        \frametitle{Πρωταρχική Αναδρομή}
+        \begin{itemize}
+        	\item Έτσι δεδομένου του αρχικού ορισμού για την πρωταρχική αναδρομή:
+                $$\left\{
+                    \begin{array}{llr@{}l}
+                      f_{n+1}(x_1,\ldots,x_n, 0)     &=&    g_n(&x_1,\ldots,x_n) \\
+                      f_{n+1}(x_1,\ldots,x_n, S_1(y))&=&h_{n+2}(&x_1,\ldots,x_n, y ,\\
+                                                     & &        &f_n(x_1,\ldots,x_n, y))
+                    \end{array}
+                \right.$$
+                και των αναπαραστάσεων $G_n$ και $H_{n+2}$
+                \pause
+           		έχουμε:
+           		$$ \begin{array}{lr@{}l}
+           		F &= \lambda x_1,\ldots ,x_n, y .&((Zero?)y) \\
+           		  &                              &(G_n)x_1 \ldots x_n \\
+           		  &                              &<H_{n+2},x_1,\ldots,x_n,(P)y,(F)x_1 \ldots x_n (P)y>
+           		\end{array}$$
+           		\pause
+           		που λύνεται με τη χρήση του Y τελεστή.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Πρωταρχική Αναδρομή}
+        \begin{itemize}
+        	\item Τελική μορφή
+           		$$ \begin{array}{lr@{}l}
+           		F &= (Y)\lambda f,x_1,&\ldots ,x_n, y .((Zero?)y) \\
+           		  &                                   &(G_n)x_1 \ldots x_n \\
+           		  &                                   &<H_{n+2},x_1,\ldots,x_n,(P)y,(f)x_1 \ldots x_n (P)y>
+           		\end{array}$$
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Πρωταρχική Αναδρομή}
+        \begin{itemize}
+        	\item foo
+        \end{itemize}
+\end{frame}
+
+% άέήίόύώ
+
 \subsection{Σχήμα ελαχιστοποίησης}
 \end{document}
