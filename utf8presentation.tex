@@ -841,14 +841,59 @@
         \end{itemize}
 \end{frame}
 
+\subsection{Σχήμα ελαχιστοποίησης}
 \begin{frame}
-        \frametitle{Πρωταρχική Αναδρομή}
+        \frametitle{Ελαχιστοποίηση}
         \begin{itemize}
-        	\item foo
+        	\item Για το σχήμα ελαχιστοποίησης ξεκινάμε από τον ορισμό:
+        	$$g(x_1,\ldots,x_n) = \mu y {f(x_1,\ldots,x_n,y)=0}$$
+        	και έστω ότι έχουμε την αναπαράσταση $F$ για την $f$.
+        	\pause
+        	\item Έστω ο όρος $\Gamma = \lambda n. ((n) \lambda x. TRUE) FALSE$
+        	\pause
+        	\item ο όρος $\Phi = \lambda x_1,\ldots,x_n,y . (\Gamma) (F) x_1 \ldots x_n y$
+        	\pause
+        	\item ο όρος $ T = \lambda \delta \phi n . ((\phi n)(\delta \phi) (S_1) n) n$
+        	\pause
+        	\item και ο όρος $\Delta = (D)D$ όπου $D = \lambda x . (T) (x) x$
+        \end{itemize}
+\end{frame}
+
+\subsection{Σχήμα ελαχιστοποίησης}
+\begin{frame}
+        \frametitle{Ελαχιστοποίηση}
+        \begin{itemize}
+          \item Τότε για οποιαδήποτε $\Phi, n$
+            $$ \begin{array}{ll}
+            (\Delta) \Phi n &= (D) D \Phi n \\
+                            &= (\lambda x. (T) (x) x) D \Phi n \\
+                &\rightarrow_h (T) (D) D \Phi n \\
+                            &= (T) \Delta \Phi n \\
+                            &= (\lambda \delta \phi n . ((\phi n)(\delta \phi) (S_1) n) n) \Delta \Phi n \\
+         &\twoheadrightarrow_h ((\Phi n) (\Delta \Phi) (S_1) n) n
+            \end{array}$$
+          \pause
+          \item Επίσης ισχύει ότι αν $b, t_0, t_1$ όροι και $b =_\beta TRUE$ τότε $ b t_0 t_1 \twoheadrightarrow_h t_0$
+        \end{itemize}
+\end{frame}
+
+\subsection{Σχήμα ελαχιστοποίησης}
+\begin{frame}
+        \frametitle{Ελαχιστοποίηση}
+        \begin{itemize}
+          \item Έτσι η $g$ αναπαρίσταται τελικά από τον όρο:
+            $$G = \lambda x_1 \ldots x_n . ((\Delta) (\Phi) x_1 \ldots x_n) \bar{0}$$
+          \pause
+          \item Αν για κάποιο $\bar{n}$ ισχύει $\Phi x_1 \ldots x_n \bar{n}=_\beta FALSE$ τότε $G =_\beta\bar{n}$
+          \pause
+          \item Αν για κάποιο $\bar{n}$ η $F \bar{n}$ δεν ορίζεται, δεν θα ορίζεται 
+          	    ούτε η $\Phi \bar{n}$ επομένως ούτε και η $G$
+          \pause
+          \item Αν για κάθε $\bar{n}$ η $\Phi \bar{n}$ έχει τιμή $TRUE$ τότε έχουμε
+                μια άπειρη αναγωγή κεφαλής για τον $G$ οπότε δεν είναι κανονικοποιήσιμος.
         \end{itemize}
 \end{frame}
 
 % άέήίόύώ
 
-\subsection{Σχήμα ελαχιστοποίησης}
 \end{document}
