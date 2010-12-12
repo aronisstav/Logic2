@@ -624,6 +624,38 @@
 \end{itemize}
 \end{frame}
 
+\subsection{Τελεστής Y}
+
+\begin{frame}
+\frametitle{Θεώρημα σταθερού σημείου}
+\begin{itemize}
+\item $ (i) \; \forall F \in \Lambda , \exists X \in \Lambda: \; F X = X. $ \pause
+\item $ (ii) $ Υπάρχει τελεστής σταθερού σημείου:
+\[ \textbf{Y} = \lambda f . (\lambda x . f (xx)) (\lambda x . f (xx)) \]
+ώστε $ \forall F \; F (\textbf{Y} F) = \textbf{Y} F $. \pause
+\item Απόδειξη: \\
+$ (i) $ Έστω $ W \equiv \lambda x . F (xx) $ και $ X \equiv W W $. Τότε:
+\[ X \equiv W W \equiv (\lambda x . F (xx)) W \equiv F (WW) \equiv F X \] \pause
+$ (ii) $ Αποδεικνύοντας το $ (i) $ .
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Επίλυση εξισώσεων}
+\begin{itemize}
+\item Παράδειγμα $(i) \; \; \exists G, \forall X: \; G X = \textbf{S} G X $ \\
+όπου $ \textbf{S} \equiv \lambda x y z . x z (y z) $ \pause
+\item $$ \begin{array}{ll}
+                G \equiv \textbf{Y} (\lambda g x. \textbf{S} g x) & \Rightarrow  \\
+                G = (\lambda g x. \textbf{S} g x) G & \Rightarrow  \\
+                G = \lambda x . \textbf{S} G x & \Rightarrow  \\
+                G x = \textbf{S} G x & \Rightarrow \forall X \; G X = \textbf{S} G X
+      \end{array} $$  \pause
+\item   Παράδειγμα $(ii) \; \; \exists G, \forall X: \; G X = G G $ \pause
+\item $ G \equiv \textbf{Y} (\lambda g x. g g) \Rightarrow \ldots $
+\end{itemize}
+\end{frame}
+
 \section{Αναπαράσταση αναδρομικών συναρτήσεων}
 
 \subsection{Church Numerals}
