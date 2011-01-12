@@ -13,10 +13,38 @@
 \usefonttheme{serif}
 \usecolortheme{beaver}
 
-\title[Αναδρομικές Συναρτήσεις στο λ-λογισμό]{Αναπαράσταση Αναδρομικών Συναρτήσεων στο λ-λογισμό}
+\title[Αναδρομικές Συναρτήσεις στο λ-λογισμό]
+      {Αναπαράσταση Αναδρομικών Συναρτήσεων στο λ-λογισμό}
 \author{Σταύρος Αρώνης, Ειρήνη Αρβανίτη}
 \date{14 Σεπτεμβρίου 2010}
 \institute{Εφαρμογές της λογικής στην Πληροφορική\\Σχολή ΗΜΜΥ, ΕΜΠ}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{
+  \leavevmode
+  \hbox{
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,right]
+      {author in head/foot}
+      \usebeamerfont{title in head/foot}
+      \insertshortauthor
+      \hspace{.3cm}
+    \end{beamercolorbox}%
+    
+    \begin{beamercolorbox}[wd=.40\paperwidth,ht=2.5ex,dp=1.125ex,left]
+      {title in head/foot}
+      \usebeamerfont{author in head/foot}\
+      \hspace{.3cm}
+      \insertshorttitle
+    \end{beamercolorbox}
+    
+    \begin{beamercolorbox}[wd=.10\paperwidth,ht=2.5ex,dp=1.125ex,center]
+      {title in head/foot}
+      \usebeamerfont{author in head/foot}
+      \insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}
+  }
+  \vskip0pt
+}
 
 \AtBeginSection[]
 {
@@ -29,10 +57,10 @@
 \begin{document}
 
 \begin{frame}
-        \titlepage
-        \begin{center}
-                \includegraphics[height=2cm]{pyrforos.png}
-        \end{center}
+  \titlepage
+  \begin{center}
+    \includegraphics[height=2cm]{pyrforos.png}
+  \end{center}
 \end{frame}
 
 \section*{Επισκόπηση}
@@ -46,29 +74,28 @@
 \subsection{Ορισμός}
 
 \begin{frame}
-        \frametitle{Ορισμός}
-        \begin{itemize}
-                \item   Οι \textbf{πρωταρχικά αναδρομικές συναρτήσεις} 
-                                είναι συναρτήσεις με πεδίο ορισμού το $\mathbb{N}^k$ 
-                                και σύνολο τιμών το $\mathbb{N}$.
-                \pause
-                \item   Η κλάση τους είναι η μικρότερη που περιέχει τις ακόλουθες
-                                θεμελιώδεις συναρτήσεις και είναι κλειστή ως προς τα ακόλουθα
-                                σχήματα κλεισίματος.
-        \end{itemize}
+  \frametitle{Ορισμός}
+  \begin{itemize}
+  \item Οι \textbf{πρωταρχικά αναδρομικές συναρτήσεις} είναι
+    συναρτήσεις με πεδίο ορισμού το $\mathbb{N}^k$ και σύνολο τιμών το
+    $\mathbb{N}$.\pause
+  \item Η κλάση τους είναι η μικρότερη που περιέχει τις ακόλουθες
+    θεμελιώδεις συναρτήσεις και είναι κλειστή ως προς τα ακόλουθα
+    σχήματα κλεισίματος (επαγωγικό σύνολο).
+  \end{itemize}
 \end{frame}
 
 \subsection{Θεμελιώδεις συναρτήσεις}
 
 \begin{frame}
-        \frametitle{Θεμελιώδεις συναρτήσεις}
-        \begin{itemize}
-                \item Η σταθερή συνάρτηση με τιμή 0: $$Z_0=0$$
-                \pause
-                \item Η συνάρτηση που παίρνει έναν αριθμό και επιστρέφει τον επόμενο: $$S_1(n)=n+1$$
-                \pause
-                \item Οι συναρτήσεις προβολής: $$U^i_n(x_1,\ldots,x_i,\ldots,x_n)=x_i$$
-        \end{itemize}
+  \frametitle{Θεμελιώδεις συναρτήσεις}
+  \begin{itemize}
+  \item Η σταθερή συνάρτηση με τιμή 0: $$Z_0=0$$
+  \item Η συνάρτηση που παίρνει έναν αριθμό και επιστρέφει τον
+    επόμενο: $$S_1(n)=n+1$$
+  \item Οι συναρτήσεις
+    προβολής: $$U^i_n(x_1,\ldots,x_i,\ldots,x_n)=x_i$$
+  \end{itemize}
 \end{frame}
 
 \subsection{Σχήματα κλεισίματος}
@@ -76,183 +103,207 @@
 \subsubsection{Σύνθεση}
 
 \begin{frame}
-        \frametitle{Σύνθεση}
-        \begin{itemize}
-                \item Αν έχουμε τις πρωταρχικά αναδρομικές συναρτήσεις: $$H_m, G1_n, \ldots, GM_n$$
-                \pause
-                \item Τότε και η $$F_n(x_1,\ldots,x_n) = H_m(G1_n(x_1,\ldots,x_n),\ldots,GM_n(x_1,\ldots,x_n))$$
-                είναι πρωταρχικά αναδρομική.
-        \end{itemize}
+  \frametitle{Σύνθεση}
+  \begin{itemize}
+  \item Αν έχουμε τις πρωταρχικά αναδρομικές συναρτήσεις: $$H_m, G1_n,
+    \ldots, GM_n$$
+  \item Τότε και η
+    $$
+    F_n(x_1,\ldots,x_n) =
+    H_m(G1_n(x_1,\ldots,x_n),\ldots,GM_n(x_1,\ldots,x_n))
+    $$
+    είναι πρωταρχικά αναδρομική.
+  \end{itemize}
 \end{frame}
 
 \subsubsection{Πρωταρχική Αναδρομή}
 
 \begin{frame}
-        \frametitle{Πρωταρχική Αναδρομή}
-        \begin{itemize}
-                \item Αν έχουμε τις πρωταρχικά αναδρομικές συναρτήσεις: $$G_n, H_{n+2}$$
-                \pause
-                \item Τότε και η 
-                $$\left\{
-                    \begin{array}{llr@{}l}
-                      F_{n+1}(x_1,\ldots,x_n, 0)     &=&    G_n(&x_1,\ldots,x_n) \\
-                      F_{n+1}(x_1,\ldots,x_n, S_1(y))&=&H_{n+2}(&x_1,\ldots,x_n, y ,\\
-                                                     & &        &F_n(x_1,\ldots,x_n, y))
-                    \end{array}
-                \right.$$
-                είναι πρωταρχικά αναδρομική.
-        \end{itemize}
+  \frametitle{Πρωταρχική Αναδρομή}
+  \begin{itemize}
+  \item Αν έχουμε τις πρωταρχικά αναδρομικές συναρτήσεις:
+    $$
+    G_n, H_{n+2}
+    $$
+  \item Τότε και η
+    $$
+    \left\{
+    \begin{array}{llr@{}l}
+      F_{n+1}(x_1,\ldots,x_n, 0)     &=&    G_n(&x_1,\ldots,x_n) \\
+      F_{n+1}(x_1,\ldots,x_n, S_1(y))&=&H_{n+2}(&x_1,\ldots,x_n, y ,\\
+      & &        &F_n(x_1,\ldots,x_n, y))
+    \end{array}
+    \right.
+    $$
+    είναι πρωταρχικά αναδρομική.
+  \end{itemize}
 \end{frame}
 
 \subsection{Παραδείγματα πρωταρχικά αναδρομικών συναρτήσεων}
 
 \begin{frame}
-        \frametitle{Παραδείγματα πρωταρχικά αναδρομικών συναρτήσεων}
-        \begin{itemize}
-                \item Η συνάρτηση προηγούμενος:
-                $$\left\{
-                     \begin{array}{ll}
-                       P_1(0)      &= Z_0\\
-                       P_1(S_1(x)) &= U^1_2(x,P(x))
-                     \end{array}
-                \right.$$
-                \pause
-                \item Η συνάρτηση πρόσθεσης:
-                $$\left\{
-                    \begin{array}{ll}
-                      Add_2(x, 0)      &= U^1_1(x)\\
-                      Add_2(x, S_1(y)) &= S_1(U^3_3(x, y , Add_2(x, y)))
-                    \end{array}
-                \right.$$
-                \pause
-                ή πιο απλά:
-                $$\left\{
-                    \begin{array}{ll}
-                      Add_2(x, 0)      &= x\\
-                      Add_2(x, S_1(y)) &= S_1(Add_2(x, y))
-                    \end{array}
-                \right.$$
-                \pause
-                \item Η συνάρτηση αφαίρεσης:
-                $$\left\{
-                    \begin{array}{ll}
-                      Sub_2(x, 0)      &= x\\
-                      Sub_2(x, S_1(y)) &= P_1(Sub_2(x, y))
-                    \end{array}
-                \right.$$
-        \end{itemize}
+  \frametitle{Παραδείγματα πρωταρχικά αναδρομικών συναρτήσεων}
+  \begin{itemize}
+  \item Η συνάρτηση προηγούμενος:
+    $$
+    \left\{
+    \begin{array}{ll}
+      P_1(0)      &= Z_0\\
+      P_1(S_1(x)) &= U^1_2(x,P(x))
+    \end{array}
+    \right.
+    $$
+    \pause
+  \item Η συνάρτηση πρόσθεσης:
+    $$
+    \left\{
+    \begin{array}{ll}
+      Add_2(x, 0)      &= U^1_1(x)\\
+      Add_2(x, S_1(y)) &= S_1(U^3_3(x, y , Add_2(x, y)))
+    \end{array}
+    \right.
+    $$
+    ή πιο απλά:
+    $$
+    \left\{
+    \begin{array}{ll}
+      Add_2(x, 0)      &= x\\
+      Add_2(x, S_1(y)) &= S_1(Add_2(x, y))
+    \end{array}
+    \right.
+    $$
+    \pause
+  \item Η συνάρτηση αφαίρεσης:
+    $$
+    \left\{
+    \begin{array}{ll}
+      Sub_2(x, 0)      &= x\\
+      Sub_2(x, S_1(y)) &= P_1(Sub_2(x, y))
+    \end{array}
+    \right.
+    $$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Παραδείγματα πρωταρχικά αναδρομικών συναρτήσεων}
-        \begin{itemize}
-                \item Η συνάρτηση πολλαπλασιασμού:
-                $$\left\{
-                    \begin{array}{ll}
-                      Mult_2(x, 0)      &= Z_0\\
-                      Mult_2(x, S_1(y)) &= Add_2(x, Mult_2(x, y))
-                    \end{array}
-                \right.$$
-                \pause
-                \item Η συνάρτηση << ίσο με 0 >>:
-                $$\left\{
-                    \begin{array}{ll}
-                      EZ(0)      &= S_1(Z_0)\\
-                      EZ(S_1(x)) &= Z_0
-                    \end{array}
-                \right.$$
-        \end{itemize}
+  \frametitle{Παραδείγματα πρωταρχικά αναδρομικών συναρτήσεων}
+  \begin{itemize}
+  \item Η συνάρτηση πολλαπλασιασμού:
+    $$
+    \left\{
+    \begin{array}{ll}
+      Mult_2(x, 0)      &= Z_0\\
+      Mult_2(x, S_1(y)) &= Add_2(x, Mult_2(x, y))
+    \end{array}
+    \right.
+    $$
+    \pause
+  \item Η συνάρτηση << ίσο με 0 >>:
+    $$
+    \left\{
+    \begin{array}{ll}
+      EZ(0)      &= S_1(Z_0)\\
+      EZ(S_1(x)) &= Z_0
+    \end{array}
+    \right.
+    $$
+  \end{itemize}
 \end{frame}
 
 \subsection{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
 
 \begin{frame}
-        \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
-        \begin{itemize}
-                \item Οι πρωταρχικά αναδρομικές συναρτήσεις είναι αριθμήσιμο σύνολο.
-                \pause
-                \item Για την απαρίθμηση μπορούμε να χρησιμοποιήσουμε π.χ. το 
-                ακόλουθο σχήμα βασισμένο στα αριθμητικά του G\"odel
-                \footnote{
-                \htmladdnormallink{\tiny
-                http://en.wikipedia.org/wiki/G\"odel\_number}
-                {http://en.wikipedia.org/wiki/G\%C3\%B6del_number}}:
-                \begin{itemize}
-                        \item Οι θεμελιώδεις συναρτήσεις:
-                        $$\begin{array}{l}
-                            Z_0 \rightarrow 1 \\
-                            S_1 \rightarrow 2*3^1 \\
-                            U^i_n \rightarrow 2^2*3^n*5^i
-                        \end{array}$$
-                \end{itemize}
-        \end{itemize}
+  \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
+  \begin{itemize}
+  \item Οι πρωταρχικά αναδρομικές συναρτήσεις είναι αριθμήσιμο
+    σύνολο. \pause
+  \item Για την απαρίθμηση μπορούμε να χρησιμοποιήσουμε π.χ. το
+    ακόλουθο σχήμα βασισμένο στα αριθμητικά του G\"odel
+    \footnote{\htmladdnormallink{\tiny
+        http://en.wikipedia.org/wiki/G\"odel\_number}
+      {http://en.wikipedia.org/wiki/G\%C3\%B6del_number}}:
+    \begin{itemize}
+    \item Οι θεμελιώδεις συναρτήσεις:
+      $$
+      \begin{array}{l}
+        Z_0 \rightarrow 1 \\
+        S_1 \rightarrow 2*3^1 \\
+        U^i_n \rightarrow 2^2*3^n*5^i
+      \end{array}
+      $$
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
-        \begin{itemize}
-                \item Το σχήμα σύνθεσης:
-                \begin{itemize}
-                        \item Αν έχουμε την αντιστοίχιση:
-                        $$\begin{array}{l}
-                            H_m \rightarrow N_H,\\
-                            G1_n \rightarrow N_{G1},\\
-                            \ldots,\\
-                            GM_n \rightarrow N_{GM}
-                        \end{array}$$
-                \pause
-                        \item Τότε η $F_n(x_1,\ldots,x_n) = H_m(G1_n(x_1,\ldots,x_n),\ldots,GM_n(x_1,\ldots,x_n))$
-                        αντιστοιχεί στο:
-                        $$2^3*3^n*5^{N_H}*7^{N_{G1}}*\ldots*Prime_{m+3}^{N_{GM_n}}$$
-                \end{itemize}                   
-        \end{itemize}
+  \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
+  \begin{itemize}
+  \item Το σχήμα σύνθεσης:
+    \begin{itemize}
+    \item Αν έχουμε την αντιστοίχιση:
+      $$
+      \begin{array}{l}
+        H_m \rightarrow N_H,\\
+        G1_n \rightarrow N_{G1},\\
+        \ldots,\\
+        GM_n \rightarrow N_{GM}
+      \end{array}
+      $$
+    \item Τότε η $F_n(x_1,\ldots,x_n) =
+      H_m(G1_n(x_1,\ldots,x_n),\ldots,GM_n(x_1,\ldots,x_n))$
+      αντιστοιχεί στο:
+      $$2^3*3^n*5^{N_H}*7^{N_{G1}}*\ldots*Prime_{m+3}^{N_{GM_n}}$$
+    \end{itemize}                   
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
-        \begin{itemize}
-                \item Το σχήμα πρωταρχικής αναδρομής:
-                \begin{itemize}
-                        \item Αν έχουμε την αντιστοίχιση:
-                        $$\begin{array}{l}
-                            G_n \rightarrow N_Γ,\\
-                            H_{n+2} \rightarrow N_H
-                        \end{array}$$
-                \pause
-                        \item Τότε η 
-                        $$\left\{
-                            \begin{array}{llr@{}l}
-                              F_{n+1}(x_1,\ldots,x_n, 0)     &=&    G_n(&x_1,\ldots,x_n) \\
-                              F_{n+1}(x_1,\ldots,x_n, S_1(y))&=&H_{n+2}(&x_1,\ldots,x_n, y ,\\
-                                                             & &        &F_n(x_1,\ldots,x_n, y))
-                            \end{array}
-                        \right.$$
-                        αντιστοιχεί στο:
-                        $$ 2^4*3^n*5^{N_G}*7^{N_H} $$
-                \end{itemize}                   
-        \end{itemize}
+  \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
+  \begin{itemize}
+  \item Το σχήμα πρωταρχικής αναδρομής:
+    \begin{itemize}
+    \item Αν έχουμε την αντιστοίχιση:
+      $$
+      \begin{array}{l}
+        G_n \rightarrow N_Γ,\\
+        H_{n+2} \rightarrow N_H
+      \end{array}
+      $$
+    \item Τότε η 
+      $$
+      \left\{
+      \begin{array}{llr@{}l}
+        F_{n+1}(x_1,\ldots,x_n, 0)     &=&    G_n(&x_1,\ldots,x_n) \\
+        F_{n+1}(x_1,\ldots,x_n, S_1(y))&=&H_{n+2}(&x_1,\ldots,x_n, y ,\\
+        & &        &F_n(x_1,\ldots,x_n, y))
+      \end{array}
+      \right.
+      $$
+      αντιστοιχεί στο:
+      $$ 2^4*3^n*5^{N_G}*7^{N_H} $$
+    \end{itemize}                   
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
-        \begin{itemize}
-                \item Η απαρίθμηση δεν αντιστοιχεί σε κάθε ακέραιο μια έγκυρη
-                πρωταρχικά αναδρομική συνάρτηση αλλά είναι εφικτό να ελεγχθεί αν
-                ένας ακέραιος αντιστοιχεί σε έγκυρη συνάρτηση:
-                \pause
-                \begin{itemize}
-                        \item Παραγοντοποιούμε τον αριθμό
-                \pause
-                        \item Ελέγχουμε τη δύναμη του 2 για να δούμε αν είναι απλή περίπτωση
-                \pause
-                        \item Αν είναι σχήμα κλεισίματος, ελέγχουμε αναδρομικά κάθε μια συνάρτηση
-                        που περιλαμβάνεται όπως και το ίδιο το σχήμα κλεισίματος.
-                \end{itemize}
-                \pause
-                \item Είναι επίσης εύκολο να βρούμε πόσα ορίσματα εχει μια συνάρτηση που αντιστοιχεί σε έναν κωδικό
-                \pause
-                \item $Legal(x)=0|1$ και $Args(x)=n$
-        \end{itemize}
+  \frametitle{Απαρίθμηση πρωταρχικά αναδρομικών συναρτήσεων}
+  \begin{itemize}
+  \item Η απαρίθμηση δεν αντιστοιχεί σε κάθε ακέραιο μια έγκυρη
+    πρωταρχικά αναδρομική συνάρτηση αλλά είναι εφικτό να ελεγχθεί αν
+    ένας ακέραιος αντιστοιχεί σε έγκυρη συνάρτηση: \pause
+    \begin{itemize}
+    \item Παραγοντοποιούμε τον αριθμό
+    \item Ελέγχουμε τη δύναμη του 2 για να δούμε αν είναι απλή
+      περίπτωση
+    \item Αν είναι σχήμα κλεισίματος, ελέγχουμε αναδρομικά κάθε μια
+      συνάρτηση που περιλαμβάνεται όπως και το ίδιο το σχήμα
+      κλεισίματος.
+    \end{itemize}
+    \pause
+  \item Είναι επίσης εύκολο να βρούμε πόσα ορίσματα εχει μια συνάρτηση
+    που αντιστοιχεί σε έναν κωδικό
+  \item $Legal(x)=0|1$ και $Args(x)=n$
+  \end{itemize}
 \end{frame}
 
 \section{Αναδρομικές συναρτήσεις}
@@ -260,124 +311,112 @@
 \subsection{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
 
 \begin{frame}
-        \frametitle{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
-        \begin{itemize}
-                \item Δεν είναι όλες οι << υπολογίσιμες >> συναρτήσεις
-                πρωταρχικά αναδρομικές!
-                \pause
-                \item Έστω η συνάρτηση $f(x)$ με τύπο:
-                $$f(x)=\left\{
-                          \begin{array}{ll}
-                            0           &, Legal(x) \neq 1 \vee Args(x) \neq 1\\
-                            FX_1(x) + 1 &, $διαφορετικά$
-                          \end{array}
-                       \right.
-                $$
-                όπου $FX_1$ η συνάρτηση με κωδικό $x$.
-                \pause
-                \item Υπολογίσιμη συνάρτηση.
-        \end{itemize}
+  \frametitle{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
+  \begin{itemize}
+  \item Δεν είναι όλες οι << υπολογίσιμες >> συναρτήσεις
+    πρωταρχικά αναδρομικές!
+    \pause
+  \item Έστω η συνάρτηση $f(x)$ με τύπο:
+    $$
+    f(x)=\left\{
+    \begin{array}{ll}
+      0           &, Legal(x) \neq 1 \vee Args(x) \neq 1\\
+      FX_1(x) + 1 &, $διαφορετικά$
+    \end{array}
+    \right.
+    $$
+    όπου $FX_1$ η συνάρτηση με κωδικό $x$.
+  \item Υπολογίσιμη συνάρτηση.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
-        \begin{itemize}
-                \item Έστω ότι η $f$ είναι πρωταρχικά αναδρομική.
-                \pause
-                \item Τότε έχει κάποιον κωδικό έστω $N_f$.
-                \pause
-                \item Άρα $f(N_f) = FN_f(N_f) + 1 = f(N_f) + 1$.
-                \pause
-                \item Άτοπο!
-        \end{itemize}
+  \frametitle{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
+  \begin{itemize}
+  \item Έστω ότι η $f$ είναι πρωταρχικά αναδρομική.\pause
+  \item Τότε έχει κάποιον κωδικό έστω $N_f$.\pause
+  \item Άρα $f(N_f) = FN_f(N_f) + 1 = f(N_f) + 1$.\pause
+  \item Άτοπο!
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
-        \begin{itemize}
-                \item Η συνάρτηση Ackermann:
-                $$\left\{
-                    \begin{array}{ll}
-                      A(0,n) &= n+1\\
-                      A(m,0) &= A(m-1,1)\\
-                      A(m,n) &= A(m-1, A(m,n-1))
-                    \end{array}
-                \right.$$
-                \pause
-                \item Υπολογίσιμη.
-                \pause
-                \item Δεν μπορεί να γραφεί με πρωταρχική αναδρομή 
-                \footnote{
-                \htmladdnormallink{\tiny
-                http://home.manhattan.edu/~gregory.taylor/thcomp/pdf-files/ackerman.pdf}
-                {http://home.manhattan.edu/~gregory.taylor/thcomp/pdf-files/ackerman.pdf}}.
-        \end{itemize}
+  \frametitle{Γιατί δεν αρκεί η πρωταρχική αναδρομή}
+  \begin{itemize}
+  \item Η συνάρτηση Ackermann:
+    $$
+    \left\{
+    \begin{array}{ll}
+      A(0,n) &= n+1\\
+      A(m,0) &= A(m-1,1)\\
+      A(m,n) &= A(m-1, A(m,n-1))
+    \end{array}
+    \right.
+    $$
+  \item Υπολογίσιμη.
+  \item Δεν μπορεί να γραφεί με πρωταρχική αναδρομή 
+    \footnote{
+      \htmladdnormallink{\tiny
+        http://home.manhattan.edu/~gregory.taylor/thcomp/pdf-files/ackerman.pdf}
+                        {http://home.manhattan.edu/~gregory.taylor/thcomp/pdf-files/ackerman.pdf}}.
+  \end{itemize}
 \end{frame}
 
 \subsection{Αναδρομικές συναρτήσεις}
 
 \begin{frame}
-        \frametitle{Αναδρομικές συναρτήσεις}
-        \begin{itemize}
-                \item Μερικές συναρτήσεις.
-                $$F_n(a_1,\ldots,a_n)=
-                  \left\{
-                    \begin{array}{l}
-                      b\\
-                      \bot
-                    \end{array}
-                  \right.
-                $$
-                \pause 
-                \item Περιλαμβάνουν:
-                \begin{itemize}
-                        \item Θεμελιώδεις συναρτήσεις.
-                        \pause
-                        \item Σχήματα κλεισίματος:
-                        \begin{itemize}
-                                \item Σύνθεση
-                                \item Πρωταρχική αναδρομή
-                                \pause
-                                \item \textbf{Ελαχιστοποίηση}
-                        \end{itemize}
-                \end{itemize}
-        \end{itemize}
+  \frametitle{Αναδρομικές συναρτήσεις}
+  \begin{itemize}
+  \item Μερικές συναρτήσεις.
+    $$F_n(a_1,\ldots,a_n)=
+    \left\{
+    \begin{array}{l}
+      b\\
+      \bot
+    \end{array}
+    \right.
+    $$
+  \item Περιλαμβάνουν:
+    \begin{itemize}
+    \item Θεμελιώδεις συναρτήσεις.
+    \item Σχήματα κλεισίματος:
+      \begin{itemize}
+      \item Σύνθεση
+      \item Πρωταρχική αναδρομή
+      \item \textbf{Ελαχιστοποίηση}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \subsection{Σχήμα ελαχιστοποίησης}
 
 \begin{frame}
-        \frametitle{Σχήμα ελαχιστοποίησης}
-        \begin{itemize}
-                \item Αν έχουμε την αναδρομική συνάρτηση $F_{n+1}(y,x_1,\ldots,x_n)$
-                \pause
-                \item Τότε και η:
-                $$
-                \small
-                \begin{array}{ll}
-                  G_n =\\
-                  \mu y(x_1,\ldots,x_n) = z \Leftrightarrow 
-                    & \exists y_0,\ldots,y_n $ τέτοια ώστε$\\
-                    & y_i = F_{n+1}(i, x_1,\ldots, x_n),$ για $i=0,1,\ldots,z \\
-                    & y_i > 0,$ για $i=0,1,\ldots,z-1 \\
-                    & y_z = 0
-                \end{array}
-                $$
-                είναι αναδρομική.
-        \end{itemize}
+  \frametitle{Σχήμα ελαχιστοποίησης}
+  Αν έχουμε την αναδρομική συνάρτηση $F_{n+1}(y,x_1,\ldots,x_n)$ \\
+  Τότε και η:
+    $$
+    G_n = \mu y(F_{n+1}(y,x_1,\ldots,x_n)) = z \Leftrightarrow \\
+    \left
+    \exists y_0,\ldots,y_n $ τέτοια ώστε$\\
+    y_i = F_{n+1}(i, x_1,\ldots, x_n),$ για $i=0,1,\ldots,z \\
+    y_i > 0,$ για $i=0,1,\ldots,z-1 \\
+    y_z = 0
+    \right
+    $$
+    είναι αναδρομική.
 \end{frame}
 
 \subsection{Αοριστία}
 
 \begin{frame}
-        \frametitle{Αοριστία}
-        \begin{itemize}
-    	    \item Η χρήση του παραπάνω σχήματος εισάγει αοριστίες:
-    	    \pause
-            \item Αν $y_i = F_{n+1}(i, x_1,\ldots, x_n)$ δεν είναι ποτέ ίσο με $0$.
-            \pause
-            \item Αν $y_i > 0,\:for\:i=0,1,\ldots,w-1$ και $y_w$ δεν ορίζεται.
-        \end{itemize}
+  \frametitle{Αοριστία}
+  Η χρήση του παραπάνω σχήματος εισάγει αοριστίες:
+  \begin{itemize}
+  \item Αν $y_i = F_{n+1}(i, x_1,\ldots, x_n)$ δεν είναι ποτέ ίσο με
+    $0$.
+  \item Αν $y_i > 0$ για $i=0,1,\ldots,w-1$ και $y_w$ δεν ορίζεται.
+  \end{itemize}
 \end{frame}
 
 \section{Στοιχεία λ-λογισμού}
@@ -385,111 +424,88 @@
 \subsection{Συντακτικό}
 
 \begin{frame}
-        \frametitle{Συντακτικό}
-        \begin{itemize}
-                \item Ένας λ-όρος μπορεί να είναι μια μεταβλητή.$$x$$
-                \pause
-                \item Αν $t$ είναι λ-όρος και $x$ είναι μεταβλητή, τότε $$\lambda x.t$$
-                είναι επίσης λ-όρος.
-                \pause
-                \item Αν $t, u$ είναι λ-όροι, τότε $$(t)u$$
-                είναι επίσης λ-όρος.
-        \end{itemize}
+  \frametitle{Συντακτικό}
+  \begin{itemize}
+  \item Ένας λ-όρος μπορεί να είναι μια μεταβλητή.$$x$$
+  \item Αν $t$ είναι λ-όρος και $x$ είναι μεταβλητή, τότε $$\lambda
+    x.t$$ είναι επίσης λ-όρος.
+  \item Αν $t, u$ είναι λ-όροι, τότε $$(t)u$$ είναι επίσης λ-όρος.
+  \end{itemize}
 \end{frame}
 
 \subsection{Αντικατάσταση}
 
 \begin{frame}
-        \frametitle{Αντικατάσταση}
-        \begin{itemize}
-        	\item Αν $t$, $M$ είναι λ-όροι και $x$ είναι μεταβλητή, τότε η αντικατάσταση της $x$
-            από τον $t$ στον όρο $M$, συμβολίζεται με $M[x:=t]$ \\
-            \pause
-            \item $$x[x:=t] \equiv t$$
-            \pause
-            \item $$y[x:=t] \equiv y$$
-                                    
-        \end{itemize}
-\end{frame}
-
-\begin{frame}
-        \frametitle{Αντικατάσταση}
-        \begin{itemize}
-        	
-            \item $$((P)Q)[x:=t] \equiv (P[x:=t])Q[x:=t]$$
-            \pause
-            \item $$(\lambda y . P)[x:=t] \equiv \lambda y . (P[x:=t])$$
-            \pause
-            \item $$(\lambda x . P)[x:=t] \equiv \lambda x . P$$
-            
-        \end{itemize}
+  \frametitle{Αντικατάσταση}
+  
+  Αν $t$, $M$ είναι λ-όροι και $x$ είναι μεταβλητή, τότε η
+  αντικατάσταση της $x$ από τον $t$ στον όρο $M$, συμβολίζεται με
+  $M[x:=t]$
+  \begin{itemize}
+  \item $x[x:=t] \equiv t$
+  \item $y[x:=t] \equiv y$
+  \item $((P)Q)[x:=t] \equiv (P[x:=t])Q[x:=t]$
+  \item $(\lambda y . P)[x:=t] \equiv \lambda y . (P[x:=t])$
+  \item $(\lambda x . P)[x:=t] \equiv \lambda x . P$
+  \end{itemize}
 \end{frame}
 
 \subsection{β-συστολή}
 
 \begin{frame}
-        \frametitle{β-συστολή}
-        \begin{itemize}
-        	
-            \item $\rightarrow _\beta$ είναι η μικρότερη διμελής σχέση στο $\Lambda$ ώστε να ισχύει ότι 
-                  $$(\lambda x . P)Q \rightarrow _\beta P[x:=Q]$$
-            \pause
-                  και η οποία είναι κλειστή για τους ακόλουθους κανόνες:
-            \pause
-            \item $$P \rightarrow _\beta P^{\prime}  \Rightarrow \forall x \in V : \lambda x . P \rightarrow _\beta \lambda x .    P^{\prime}$$
-            \pause
-            \item $$P \rightarrow _\beta P^{\prime}  \Rightarrow \forall Z \in \Lambda : (P)Z \rightarrow _\beta (P^{\prime})Z$$
-			\pause
-            \item $$P \rightarrow _\beta P^{\prime}  \Rightarrow \forall Z \in \Lambda : (Z)P \rightarrow _\beta (Z)P^{\prime}$$
-            
-        \end{itemize}
+  \frametitle{β-συστολή}
+  $\rightarrow _\beta$ είναι η μικρότερη διμελής σχέση στο $\Lambda$
+  ώστε να ισχύει ότι $$(\lambda x . P)Q \rightarrow _\beta P[x:=Q]$$
+  και είναι κλειστή για τους ακόλουθους κανόνες:
+  \begin{itemize}
+  \item $P \rightarrow _\beta P^{\prime} \Rightarrow \forall x \in V
+    : \lambda x . P \rightarrow _\beta \lambda x .  P^{\prime}$
+  \item $P \rightarrow _\beta P^{\prime} \Rightarrow \forall Z \in
+    \Lambda : (P)Z \rightarrow _\beta (P^{\prime})Z$
+  \item $P \rightarrow _\beta P^{\prime} \Rightarrow \forall Z \in
+    \Lambda : (Z)P \rightarrow _\beta (Z)P^{\prime}$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{β-συστολή}
-        \begin{itemize}
-        	
-            \item $(\lambda x . P)Q$: $\beta$ - \textit{redex}
-            \pause
-			\item $P[x:=Q]$: $\beta$ - \textit{contractum}
-            \pause
-            \item ´Ενας όρος $M$ είναι μία \textit{$\beta$ - κανονική μορφή} εάν δεν υπάρχει όρος $N$ ώστε $M \rightarrow _\beta N$.
-            
-        \end{itemize}
+  \frametitle{β-συστολή}
+  \begin{itemize}
+  \item $(\lambda x . P)Q$: $\beta$ - \textit{redex}
+  \item $P[x:=Q]$: $\beta$ - \textit{contractum}
+  \item ´Ενας όρος $M$ είναι μία \textit{$\beta$ - κανονική μορφή} εάν
+    δεν υπάρχει όρος $N$ ώστε $M \rightarrow _\beta N$.
+  \end{itemize}
 \end{frame}
 
 \subsection{β-αναγωγή}
 
 \begin{frame}
-        \frametitle{β-αναγωγή}
-        \begin{itemize}
-        	
-            \item Η σχέση $\twoheadrightarrow _\beta$ είναι η μεταβατική και αυτοπαθής κλειστότητα της σχέσης
-                  $\rightarrow _\beta$ \\ Συνεπώς είναι κλειστή για τους κανόνες: 
-            \pause
-            \item $$P \rightarrow  _{\beta} P ^{\prime} \Rightarrow P \twoheadrightarrow _{\beta} P ^{\prime}$$
-            \pause
-            \item $$P \twoheadrightarrow _{\beta} P ^{\prime} \cap P ^{\prime} \twoheadrightarrow _{\beta} P ^{\prime \prime}
-                  \Rightarrow P \rightarrow ^{\star} _{\beta} P ^{\prime \prime}$$
-			\pause
-            \item $$P \twoheadrightarrow _{\beta} P$$
-            
-        \end{itemize}
+  \frametitle{β-αναγωγή}
+  Η σχέση $\twoheadrightarrow _\beta$ είναι η μεταβατική και αυτοπαθής
+  κλειστότητα της σχέσης $\rightarrow _\beta$ \\ Συνεπώς είναι κλειστή
+  για τους κανόνες:
+  \begin{itemize}
+  \item $P \rightarrow _{\beta} P ^{\prime} \Rightarrow P
+    \twoheadrightarrow _{\beta} P ^{\prime}$
+  \item $P \twoheadrightarrow _{\beta} P ^{\prime} \cap P ^{\prime}
+    \twoheadrightarrow _{\beta} P ^{\prime \prime} \Rightarrow P
+    \twoheadrightarrow _{\beta} P ^{\prime \prime}$
+  \item $P \twoheadrightarrow _{\beta} P$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-        \frametitle{β-συστολή}
-        \begin{itemize}
-        \item Ισχύει η ακόλουθη πρόταση:\\
-        		$$\small
-                  \begin{array}{ll}
-                    M \twoheadrightarrow _\beta N \Leftrightarrow 
-                      & $Είτε $ M \equiv N $ είτε υπάρχουν $ M_1, M_2,\ldots M_n $ ώστε $ \\
-                      & M \equiv M_1 $ και N $ \equiv M_n $ και για κάθε $ i (1 \leq i \leq n-1),\\
-                      & M_i \twoheadrightarrow _\beta M_{i+1}
-                  \end{array}
-                $$
-		\end{itemize}
+  \frametitle{β-αναγωγή}
+  Ισχύει η ακόλουθη πρόταση:
+  $$
+  \small
+  \begin{array}{ll}
+    M \twoheadrightarrow _\beta N \Leftrightarrow 
+    & $Είτε $ M \equiv N $ είτε υπάρχουν $ M_1, M_2,\ldots M_n $ ώστε $ \\
+    & M \equiv M_1 $ και N $ \equiv M_n $ και για κάθε $ i (1 \leq i \leq n-1),\\
+    & M_i \twoheadrightarrow _\beta M_{i+1}
+  \end{array}
+  $$
 \end{frame}
 
 \subsection{β-ισοδυναμία}
@@ -682,8 +698,8 @@ $ (ii) $ Αποδεικνύοντας το $ (i) $ .
 \subsection{Θεμελιώδεις συναρτήσεις}
 \begin{frame}
         \frametitle{Αναπαράσταση μερικών συναρτήσεων}
-        \begin{itemize}
                 \item Έστω $\phi : \mathbb{N}^n \rightarrow \mathbb{N}$ μερική συνάρτηση και $\Phi \in \Lambda $. O όρος $\Phi$ αναπαριστά (αντίστοιχα αναπαριστά ισχυρά) τη $\phi$ αν για κάθε $k_1,\ldots, k_n \in \mathbb{N}$ και $ \underline{k_1}, \ldots, \underline{k_n}$ τα αντίστοιχα Church numerals: \pause
+        \begin{itemize}
                 \item  αν $\phi(k_1,\ldots,k_n)$ δεν ορίζεται τότε $(\Phi) \underline{k_1} \ldots \underline{k_n}$ δεν είναι κανονικοποιήσιμος (αντίστοιχα επιλύσιμος) \pause
                 \item  αν $\phi(k_1,\ldots,k_n) = k$ τότε $(\Phi) \underline{k_1} \ldots \underline{k_n} =_\beta \underline{k}$ 
                 \pause
@@ -873,7 +889,7 @@ $ (ii) $ Αποδεικνύοντας το $ (i) $ .
         \end{itemize}
 \end{frame}
 
-\subsection{Σχήμα ελαχιστοποίησης}
+\subsubsection{Σχήμα ελαχιστοποίησης}
 \begin{frame}
         \frametitle{Ελαχιστοποίηση}
         \begin{itemize}
@@ -891,7 +907,6 @@ $ (ii) $ Αποδεικνύοντας το $ (i) $ .
         \end{itemize}
 \end{frame}
 
-\subsection{Σχήμα ελαχιστοποίησης}
 \begin{frame}
         \frametitle{Ελαχιστοποίηση}
         \begin{itemize}
@@ -909,7 +924,6 @@ $ (ii) $ Αποδεικνύοντας το $ (i) $ .
         \end{itemize}
 \end{frame}
 
-\subsection{Σχήμα ελαχιστοποίησης}
 \begin{frame}
         \frametitle{Ελαχιστοποίηση}
         \begin{itemize}
@@ -926,6 +940,6 @@ $ (ii) $ Αποδεικνύοντας το $ (i) $ .
         \end{itemize}
 \end{frame}
 
-% άέήίόύώ
-
 \end{document}
+
+% xelatex -interaction=nonstopmode utf8presentation.tex; evince utf8presentation.pdf
