@@ -470,17 +470,10 @@
     \Lambda : (P)Z \rightarrow _\beta (P^{\prime})Z$
   \item $P \rightarrow _\beta P^{\prime} \Rightarrow \forall Z \in
     \Lambda : (Z)P \rightarrow _\beta (Z)P^{\prime}$
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{β-συστολή}
-  \begin{itemize}
-  \item $(\lambda x . P)Q$: $\beta$ - \textit{redex}
-  \item $P[x:=Q]$: $\beta$ - \textit{contractum}
-  \item ´Ενας όρος $M$ είναι μία \textit{$\beta$ - κανονική μορφή} εάν
+  \end{itemize} \pause
+  	\[ \]
+  	´Ενας όρος $M$ είναι μία \textit{$\beta$ - κανονική μορφή} εάν
     δεν υπάρχει όρος $N$ ώστε $M \rightarrow _\beta N$.
-  \end{itemize}
 \end{frame}
 
 \subsection{β-αναγωγή}
@@ -504,7 +497,7 @@
     M \twoheadrightarrow _\beta N \Leftrightarrow 
     & $Είτε $ M \equiv N $ είτε υπάρχουν $ M_1, M_2,\ldots M_n $ ώστε $ \\
     & M \equiv M_1 $ και N $ \equiv M_n $ και για κάθε $ i (1 \leq i \leq n-1),\\
-    & M_i \twoheadrightarrow _\beta M_{i+1}
+    & M_i \rightarrow _\beta M_{i+1}
   \end{array}
   $$
 \end{frame}
@@ -529,7 +522,7 @@
     M =_\beta N \Leftrightarrow 
     & $ Υπάρχουν $ M_1, M_2,\ldots M_n $ με $ M \equiv M_1 $ και $ N
     \equiv M_n \\
-    & $ και για κάθε i $ (1 \leq i \leq n-1) $ έχουν $ M_i
+    & $ και για κάθε i $ (1 \leq i \leq n-1) $ έχουμε $ M_i
     \twoheadrightarrow _\beta M_{i+1}\\
     & $ ή $ M_{i+1} \twoheadrightarrow _\beta M_i
   \end{array}
@@ -559,7 +552,7 @@
   ώστε $u, v \twoheadrightarrow _\beta t$.
   \begin{itemize}
   \item $(\Leftarrow)$ Προφανές από τον ορισμό της $\beta$-ισοδυναμίας.
-  \item $(\Rightarrow)$ Aν κάποιος μπορεί να συμπεράνει ότι $u = v$,
+  \item $(\Rightarrow)$ Aν κάποιος μπορεί να συμπεράνει ότι $u =_\beta v$,
     τότε είναι εύκολο να παρατηρήσει ότι υπάρχουν όροι $u = t_0,
     t_1,\ldots, t_{2n-1}, t_{2n} = v$. Εφαρμόζοντας επανειλημμένα το
     θεώρημα Church-Rosser, καταλήγουμε σε έναν όρο $w$ τέτοιον ώστε
