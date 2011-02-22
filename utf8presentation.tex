@@ -898,8 +898,13 @@
   \frametitle{Πρωταρχική Αναδρομή}
   \begin{itemize}
   \item Τέλος η συνάρτηση ``προηγούμενος'' γράφεται:
-    $$ P_1 = \lambda n. \lambda f. \lambda x. n (\lambda g. \lambda
-    h. h (g f)) (\lambda u.x) (\lambda u. u) $$
+    $$
+    \begin{array}{l}
+       P_1 = \lambda n. (n \Phi \lambda z. z \bar{0} \bar{0}) FALSE \\ \\
+       \Phi = \lambda pz. z (S_1) (p) TRUE (p) TRUE \\ \\
+       Tuples: [a,b] \rightarrow \lambda z. z a b
+    \end{array}
+    $$
   \end{itemize}
 \end{frame}
 
