@@ -16,7 +16,7 @@
 \title[Αναδρομικές Συναρτήσεις στο λ-λογισμό]
       {Αναπαράσταση Αναδρομικών Συναρτήσεων στο λ-λογισμό}
 \author{Σταύρος Αρώνης, Ειρήνη Αρβανίτη}
-\date{14 Σεπτεμβρίου 2010}
+\date{23 Φεβρουαρίου 2011}
 \institute{Εφαρμογές της λογικής στην Πληροφορική\\Σχολή ΗΜΜΥ, ΕΜΠ}
 
 \setbeamertemplate{navigation symbols}{}
@@ -548,8 +548,8 @@
 
 \begin{frame}
   \frametitle{Κανονικοποίηση}
-  \textbf{Πόρισμα}: $u =_\beta v \Leftrightarrow$ Υπάρχει όρος $t$
-  ώστε $u, v \twoheadrightarrow _\beta t$.
+  \textbf{Πόρισμα}: $u =_\beta v \Leftrightarrow$ Υπάρχει όρος $w$
+  ώστε $u, v \twoheadrightarrow _\beta w$.
   \begin{itemize}
   \item $(\Leftarrow)$ Προφανές από τον ορισμό της $\beta$-ισοδυναμίας.
   \item $(\Rightarrow)$ Aν κάποιος μπορεί να συμπεράνει ότι $u =_\beta v$,
@@ -573,7 +573,7 @@
   \item Ένας όρος ο οποίος έχει κανονική μορφή ονομάζεται
     κανονικοποιήσιμος. Αυτό δε συνεπάγεται ότι οποιαδήποτε αναγωγή
     οδηγεί στην κανονική μορφή του.
-  \item Κάθε όρος που έχει άπειρη αναγωγή περιέχει τον όρο
+  \item Κάθε όρος που δεν έχει κανονική μορφή περιέχει τον όρο
     $\Omega$. Ωστόσο, το αντίστροφο δεν ισχύει.
   \item Ένας όρος που δεν έχει καμία άπειρη αναγωγή ονομάζεται ισχυρά
     κανονικοποιήσιμος.
@@ -676,13 +676,13 @@
   \frametitle{Επίλυση εξισώσεων}
   \begin{itemize}
   \item Παράδειγμα $(i) \; \; \exists G, \forall X: \; G X =
-    \textbf{S} G X $ \\ όπου $ \textbf{S} \equiv \lambda x y z . x z
+    \mathbb{S} G X $ \\ όπου $ \mathbb{S} \equiv \lambda x y z . x z
     (y z) $ \pause
   \item $$ \begin{array}{ll}
-    G \equiv \textbf{Y} (\lambda g x. \textbf{S} g x) & \Rightarrow  \\
-    G = (\lambda g x. \textbf{S} g x) G & \Rightarrow  \\
-    G = \lambda x . \textbf{S} G x & \Rightarrow  \\
-    G x = \textbf{S} G x & \Rightarrow \forall X \; G X = \textbf{S} G X
+    G \equiv \textbf{Y} (\lambda g x. \mathbb{S} g x) & \Rightarrow  \\
+    G = (\lambda g x. \mathbb{S} g x) G & \Rightarrow  \\
+    G = \lambda x . \mathbb{S} G x & \Rightarrow  \\
+    G x = \mathbb{S} G x & \Rightarrow \forall X \; G X = \mathbb{S} G X
   \end{array} $$  \pause
   \item Παράδειγμα $(ii) \; \; \exists G, \forall X: \; G X = G G $
     \pause
@@ -723,14 +723,14 @@
   Έστω $\phi : \mathbb{N}^n \rightarrow \mathbb{N}$ μερική συνάρτηση
   και $\Phi \in \Lambda $. O όρος $\Phi$ αναπαριστά (αντίστοιχα
   αναπαριστά ισχυρά) τη $\phi$ αν για κάθε $k_1,\ldots, k_n \in
-  \mathbb{N}$ και $ \underline{k_1}, \ldots, \underline{k_n}$ τα
+  \mathbb{N}$ και $ \bar{k_1}, \ldots, \bar{k_n}$ τα
   αντίστοιχα Church numerals: \pause
   \begin{itemize}
   \item αν $\phi(k_1,\ldots,k_n)$ δεν ορίζεται τότε $(\Phi)
-    \underline{k_1} \ldots \underline{k_n}$ δεν είναι
+    \bar{k_1} \ldots \bar{k_n}$ δεν είναι
     κανονικοποιήσιμος (αντίστοιχα επιλύσιμος) \pause
-  \item αν $\phi(k_1,\ldots,k_n) = k$ τότε $(\Phi) \underline{k_1}
-    \ldots \underline{k_n} =_\beta \underline{k}$ \pause
+  \item αν $\phi(k_1,\ldots,k_n) = k$ τότε $(\Phi) \bar{k_1}
+    \ldots \bar{k_n} =_\beta \bar{k}$ \pause
   \item Οι μη επιλύσιμοι όροι αναπαριστούν την αοριστία.
   \end{itemize}
 \end{frame}
@@ -805,17 +805,17 @@
 \begin{frame}
   \frametitle{Σύνθεση (σωστός τρόπος)}
   \begin{itemize}
-  \item Έστω $\Phi, w$ δύο $\lambda$-όροι, $m$ Church
+  \item Έστω $\Phi, w$ δύο $\lambda$-όροι, $\bar{m}$ Church
     Numeral. Όρίζουμε $<\Phi, w> = ((w) \lambda g . g o S_1) \Phi
     \bar{0}$. Τότε: \pause
   \item αν $w$ μη επιλύσιμος, τότε $<\Phi, w>$ μη επιλύσιμος. \pause
-  \item αν $w =_\beta \bar{m}$ τότε $<\Phi, w> =_\beta \Phi m$ \pause
+  \item αν $w =_\beta \bar{m}$ τότε $<\Phi, w> =_\beta \Phi \bar{m}$ \pause
   \item Απόδειξη: 
     $$
     \small
     \begin{array}{ll}
-      w =_\beta m \Rightarrow <\Phi, w>
-      & =_\beta ((m) \lambda g . g o S_1) \Phi \bar{0}\\
+      w =_\beta \bar{m} \Rightarrow <\Phi, w>
+      & =_\beta ((\bar{m}) \lambda g . g o S_1) \Phi \bar{0}\\
       & =_\beta (\lambda g . g o S_1)^m \Phi \bar{0} \\
       & =_\beta (\lambda x . (\Phi) (S_1)^m x) \bar{0} \\
       & =_\beta (\Phi) (S_1)^m \bar{0} \\
@@ -865,30 +865,30 @@
     \pause
   \item Τότε αν $X$ είναι $TRUE$ ή $FALSE$ και $Y,Z$ όροι, ένα
     $if\ldots then \ldots else \ldots$ γράφεται:
-    $$ (X)YZ $$
+    $$ XYZ $$
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Πρωταρχική Αναδρομή}
   \begin{itemize}
-  \item Επίσης για τον όρο $Zero? = \lambda n. (n) (\lambda x . FALSE)
+  \item Επίσης για τον όρο $Zero? = \lambda n. ((n) \lambda x . FALSE)
     TRUE$ ισχύει \pause
     $$
     \begin{array}{ll}
-      (Zero?) \bar{0} & =_\beta (\lambda n. (n) (\lambda x . FALSE)
+      (Zero?) \bar{0} & =_\beta (\lambda n. ((n) \lambda x . FALSE)
       TRUE) \lambda f. \lambda x. x \\
-      & =_\beta (\lambda f. \lambda x. x) (\lambda x . FALSE) TRUE \\
+      & =_\beta ((\lambda f. \lambda x. x) \lambda x . FALSE) TRUE \\
       & =_\beta TRUE \\
     \end{array}
     $$                
     \pause
     $$
     \begin{array}{ll}
-      (Zero?) \bar{n} & =_\beta (\lambda n. (n) (\lambda x . FALSE)
+      (Zero?) \bar{n} & =_\beta (\lambda n. ((n) \lambda x . FALSE)
       TRUE) \lambda f . \lambda x . \underbrace{(f) \ldots (f)}_n x \\
-      & =_\beta (\lambda f . \lambda x . \underbrace{(f) \ldots (f)}_n
-      x) (\lambda x . FALSE) TRUE \\ & =_\beta FALSE \\
+      & =_\beta ((\lambda f . \lambda x . \underbrace{(f) \ldots (f)}_n
+      x) \lambda x . FALSE) TRUE \\ & =_\beta FALSE \\
     \end{array}
     $$                
   \end{itemize}
@@ -911,7 +911,7 @@
     \begin{array}{llr@{}l}
       f_{n+1}(x_1,\ldots,x_n, 0)     &=&    g_n(&x_1,\ldots,x_n) \\
       f_{n+1}(x_1,\ldots,x_n, S_1(y))&=&h_{n+2}(&x_1,\ldots,x_n, y ,\\
-      & &        &f_n(x_1,\ldots,x_n, y))
+      & &        &f_{n+1}(x_1,\ldots,x_n, y))
     \end{array}
     \right.$$
     και των αναπαραστάσεων $G_n$ και $H_{n+2}$
@@ -972,7 +972,7 @@
     &= (T) \Delta \Phi n \\
     &= (\lambda \delta \phi n . ((\phi n)(\delta \phi) (S_1) n) n)
     \Delta \Phi n \\
-    &\twoheadrightarrow_h ((\Phi n) (\Delta \Phi) (S_1) n) n
+    &\twoheadrightarrow_h ((\Phi n) \Delta \Phi (S_1) n) n
   \end{array}$$
     \pause
   \item Επίσης ισχύει ότι αν $b, t_0, t_1$ όροι και $b =_\beta TRUE$
